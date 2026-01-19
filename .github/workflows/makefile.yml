@@ -1,0 +1,24 @@
+name: Makefile CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: almalinux8
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Install dependencies
+      run: make deps
+
+    - name: Run check, just for show
+      run: make check
+
+    - name: Build package
+      run: make 
