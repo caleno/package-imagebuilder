@@ -14,9 +14,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Install dependencies
-      run: make deps
-
     - name: Run check, just for show
       run: make check
 
